@@ -10,7 +10,11 @@ unless os.windows?
   end
 end
 
-# This is an example test, replace it with your own test.
+describe service "nginx" do
+  it { should be_running }
+  it { should be_enabled }
+end
+
 describe port(80), :skip do
-  it { should_not be_listening }
+  it { should be_listening }
 end
